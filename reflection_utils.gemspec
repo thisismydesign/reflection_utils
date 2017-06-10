@@ -9,9 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["thisismydesign"]
   spec.email         = ["thisismydesign@users.noreply.github.com"]
 
-  spec.summary       = %q{}
-  spec.description   = %q{}
-  spec.homepage      = ""
+  spec.summary       = "Commonly used utility functions related to reflection"
+  spec.homepage      = "https://github.com/thisismydesign/reflection_utils"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})

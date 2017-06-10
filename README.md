@@ -1,11 +1,25 @@
 # ReflectionUtils
 
-WIP
+#### Commonly used Ruby utility functions related to reflection.
 
 | Branch | Status |
 | ------ | ------ |
 | Release | [![Build Status](https://travis-ci.org/thisismydesign/reflection_utils.svg?branch=release)](https://travis-ci.org/thisismydesign/reflection_utils)   [![Coverage Status](https://coveralls.io/repos/github/thisismydesign/reflection_utils/badge.svg?branch=release)](https://coveralls.io/github/thisismydesign/reflection_utils?branch=release)   [![Gem Version](https://badge.fury.io/rb/reflection_utils.svg)](https://badge.fury.io/rb/reflection_utils)   [![Total Downloads](http://ruby-gem-downloads-badge.herokuapp.com/reflection_utils?type=total)](https://rubygems.org/gems/reflection_utils) |
 | Development | [![Build Status](https://travis-ci.org/thisismydesign/reflection_utils.svg?branch=master)](https://travis-ci.org/thisismydesign/reflection_utils)   [![Coverage Status](https://coveralls.io/repos/github/thisismydesign/reflection_utils/badge.svg?branch=master)](https://coveralls.io/github/thisismydesign/reflection_utils?branch=master) |
+
+## Features
+
+Functions include:
+- get_bound_instance_method(instance:, method_name:)
+- get_class_constant(instance:)
+- call(callback, params = nil)
+- has_parameter?(proc, parameter_index, parameter)
+- has_parameters?(proc, parameters)
+- assert_parameters(proc, parameters)
+
+For usage and examples for each of them take a look at the [unit tests](https://github.com/thisismydesign/reflection_utils/blob/master/spec/reflection_utils_spec.rb).
+
+Another approach would be to include this functionality into classes where its needded. It may be more elegant however moving this functionality into a separate utility class decouples the logic and removes dependency from those classes.
 
 ## Installation
 
@@ -25,7 +39,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'reflection_utils'
+
+# ...
+
+ReflectionUtils.get_bound_instance_method(instance: my_obj, method_name: :my_method)
+```
 
 ## Feedback
 
