@@ -14,7 +14,7 @@ module ReflectionUtils
 
   def self.has_parameters?(proc, parameters)
     parameters.each_with_index do |parameter, index|
-      return false unless has_parameter(proc, index, parameter)
+      return false unless has_parameter?(proc, index, parameter)
     end
 
     true
@@ -22,13 +22,13 @@ module ReflectionUtils
 
   def self.assert_parameters(proc, parameters)
     parameters.each_with_index do |parameter, index|
-      raise ArgumentError, "Argument #{parameter} not found for #{proc} at #{index} index." unless has_parameter(proc, index, parameter)
+      raise ArgumentError, "Argument #{parameter} not found for #{proc} at #{index} index." unless has_parameter?(proc, index, parameter)
     end
 
     true
   end
 
-  def self.has_parameter(proc, parameter_index, parameter)
+  def self.has_parameter?(proc, parameter_index, parameter)
     proc.parameters[parameter_index] == parameter
   end
 
