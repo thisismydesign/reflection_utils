@@ -19,7 +19,7 @@ Functions include:
 
 For usage and examples for each of them take a look at the [unit tests](https://github.com/thisismydesign/reflection_utils/blob/master/spec/reflection_utils_spec.rb).
 
-Another approach would be to include this functionality into classes where its needded. It may be more elegant however moving this functionality into a separate utility class decouples the logic and removes dependency from those classes.
+Another approach would be to include this functionality into classes where its needed. It may be more elegant however moving this functionality into a separate utility class decouples the logic and removes dependency from those classes.
 
 ## Installation
 
@@ -45,6 +45,8 @@ require 'reflection_utils'
 # ...
 
 ReflectionUtils.get_bound_instance_method(instance: my_obj, method_name: :my_method)
+
+# etc.
 ```
 
 ## Feedback
