@@ -22,7 +22,7 @@ RSpec.describe ReflectionUtils do
     @test_instance = Example.new(@test_value)
   end
 
-  describe "#get_bound_instance_method" do
+  describe ".get_bound_instance_method" do
     context "Given an instance and method name" do
 
       it "Will return a method" do
@@ -37,7 +37,7 @@ RSpec.describe ReflectionUtils do
     end
   end
 
-  describe "#get_class_constant" do
+  describe ".get_class_constant" do
     context "Given an instance" do
 
       it "Will return instance's class object" do
@@ -48,7 +48,7 @@ RSpec.describe ReflectionUtils do
     end
   end
 
-  describe "#call" do
+  describe ".call" do
     context "Given a Method" do
       it "Will call the method" do
         method = ReflectionUtils.get_bound_instance_method(instance: @test_instance, method_name: :method)
@@ -101,7 +101,7 @@ RSpec.describe ReflectionUtils do
     end
   end
 
-  describe "#has_parameter?" do
+  describe ".has_parameter?" do
     context "Given a lambda / Proc / Method, parameter_index and parameter" do
 
       it "Will return true if lambda has given parameter on given index" do
@@ -120,7 +120,7 @@ RSpec.describe ReflectionUtils do
     end
   end
 
-  describe "#has_parameters?" do
+  describe ".has_parameters?" do
     context "Given a lambda / Proc / Method and parameters" do
       it "Will return if Method has given parameter" do
         method = Example.instance_method(:method)
@@ -137,7 +137,7 @@ RSpec.describe ReflectionUtils do
     end
   end
 
-  describe "#assert_parameters" do
+  describe ".assert_parameters" do
     context "Given a lambda / Proc / Method and parameters" do
       it "Will raise ArgumentError if lambda doesn't have given parameter" do
         method = Example.instance_method(:method)
