@@ -16,6 +16,7 @@ Functions include:
 - has_parameter?(proc, parameter_index, parameter)
 - has_parameters?(proc, parameters)
 - assert_parameters(proc, parameters)
+- non_default_methods(class_or_instance)
 
 For usage and examples for each of them take a look at the [unit tests](https://github.com/thisismydesign/reflection_utils/blob/master/spec/reflection_utils_spec.rb).
 

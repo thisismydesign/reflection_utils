@@ -10,13 +10,19 @@ RSpec.describe ReflectionUtils do
 
     class Example
 
-      def initialize(value)
+      def initialize(value = nil)
         @value = value
       end
 
       def method(msg)
         @value
       end
+
+      def instance_method_1;end
+      def instance_method_2;end
+
+      def self.class_method_1;end
+      def self.class_method_2;end
     end
 
     @test_instance = Example.new(@test_value)
@@ -150,6 +156,38 @@ RSpec.describe ReflectionUtils do
 
       it "Will raise ArgumentError if Proc doesn't have parameters in given order" do
         expect{ ReflectionUtils.assert_parameters(Proc.new { |a, b| }, [[:opt, :b], [:opt, :a]]) }.to raise_error ArgumentError
+      end
+    end
+  end
+
+  describe ".non_default_methods" do
+    context "Given a class" do
+      context "With no class methods defined" do
+        it "Will return empty array" do
+          class Empty;end
+          expect(ReflectionUtils.non_default_methods(Empty)).to be_empty
+        end
+      end
+      context "With (non overwritten) class methods defined" do
+        it "Will return array of class method name symbols" do
+          expect(ReflectionUtils.non_default_methods(Example)).to include(:class_method_1, :class_method_2)
+        end
+      end
+    end
+
+    context "Given an instance of a class" do
+      context "With no instance methods defined" do
+        it "Will return empty array" do
+          class Empty;end
+          expect(ReflectionUtils.non_default_methods(Empty.new)).to be_empty
+        end
+      end
+      context "With (non overwritten) instance methods defined" do
+        it "Will return array of instance method name symbols" do
+          methods = ReflectionUtils.non_default_methods(Example.new)
+          expect(methods).to include(:instance_method_1, :instance_method_2)
+          expect(methods).not_to include(:initialize, :method)
+        end
       end
     end
   end

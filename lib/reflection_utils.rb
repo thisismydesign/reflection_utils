@@ -32,4 +32,16 @@ module ReflectionUtils
     proc.parameters[parameter_index] == parameter
   end
 
+  def self.non_default_methods(class_or_instance)
+    class_or_instance.is_a?(Module) ? non_default_class_methods(class_or_instance) : non_default_instance_methods(class_or_instance)
+  end
+
+  def self.non_default_class_methods(clazz)
+    clazz.methods - Object.methods
+  end
+
+  def self.non_default_instance_methods(instance)
+    instance.methods - Object.new.methods
+  end
+
 end
