@@ -1,3 +1,5 @@
+require_relative 'reflection_utils/create_class_methods_upon_include'
+
 module ReflectionUtils
 
   def self.get_bound_instance_method(instance:, method_name:)
