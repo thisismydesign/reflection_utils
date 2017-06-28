@@ -65,7 +65,7 @@ This gem is developed using Bundler conventions. A good overview can be found [h
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/reflection_utils.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thisismydesign/reflection_utils.
 
 ## License
 
