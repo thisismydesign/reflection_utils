@@ -18,6 +18,7 @@ Functions include:
 - assert_parameters(proc, parameters)
 - non_default_methods(class_or_instance)
 - module CreateClassMethodsUponInclude (more: http://lifeinacubicleblog.com/2017/06/26/ruby-how-to-use-self-included-meaningfully)
+- module CreateModuleFunctions (more: https://stackoverflow.com/questions/322470/can-i-invoke-an-instance-method-on-a-ruby-module-without-including-it)
 
 For usage and examples for each of them take a look at the [unit tests](https://github.com/thisismydesign/reflection_utils/blob/master/spec/reflection_utils_spec.rb).
 

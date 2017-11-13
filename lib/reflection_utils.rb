@@ -1,4 +1,5 @@
 require_relative 'reflection_utils/create_class_methods_upon_include'
+require_relative 'reflection_utils/create_module_functions'
 
 module ReflectionUtils
 
